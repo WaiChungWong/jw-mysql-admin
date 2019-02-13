@@ -1,0 +1,15 @@
+@import "../../../variables.scss";
+
+.confirm-dialog {
+  form input {
+    display: block;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+
+  .button-panel {
+    button[type="submit"] {
+      float: right;
+    }
+  }
+}

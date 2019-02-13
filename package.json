@@ -1,0 +1,72 @@
+{
+  "name": "jw-mysql-admin",
+  "version": "0.1.0",
+  "description": "A basic MySQL client middleware for node with express.",
+  "author": "john wong <johnwongwwc@gmail.com>",
+  "keywords": [
+    "mysql",
+    "admin",
+    "express"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/WaiChungWong/jw-mysql-admin.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.16.4",
+    "express-jwt": "^5.3.1",
+    "helmet": "^3.15.1",
+    "jsonwebtoken": "^8.4.0",
+    "mysql2": "^1.6.5",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
+    "ndb": "^1.0.42",
+    "nodemon": "^1.18.10"
+  },
+  "main": "./lib/index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "debug": "ndb npm start",
+    "build": "babel src/module -d lib --copy-files"
+  },
+  "babel": {
+    "presets": [
+      [
+        "env",
+        {
+          "targets": {
+            "node": "current"
+          }
+        }
+      ]
+    ]
+  },
+  "eslintConfig": {
+    "parserOptions": {
+      "ecmaVersion": 8,
+      "sourceType": "module",
+      "ecmaFeatures": {
+        "jsx": true
+      }
+    },
+    "env": {
+      "browser": true,
+      "node": true,
+      "es6": true
+    },
+    "extends": [
+      "eslint:recommended"
+    ],
+    "rules": {
+      "semi": 2,
+      "no-empty": 0
+    }
+  }
+}

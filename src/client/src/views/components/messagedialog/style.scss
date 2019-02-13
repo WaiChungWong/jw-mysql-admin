@@ -1,0 +1,15 @@
+@import "../../../variables.scss";
+
+.message-dialog {
+  form input {
+    display: block;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+
+  .button-panel {
+    button[type="submit"] {
+      float: right;
+    }
+  }
+}

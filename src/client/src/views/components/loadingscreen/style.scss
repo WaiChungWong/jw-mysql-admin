@@ -1,0 +1,35 @@
+@import "../../../variables.scss";
+
+#loading-screen-overlay {
+  position: fixed;
+  top: 100%;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: $darkershadow;
+  opacity: 0;
+  transition: top 0s 0.3s, opacity 0.3s;
+
+  &.show {
+    top: 0px;
+    opacity: 1;
+    transition: top 0s, opacity 0.3s;
+  }
+
+  .loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    @include loader(80px, 10px);
+  }
+
+  .message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: $white;
+    text-shadow: 1px 1px 1px $black;
+  }
+}

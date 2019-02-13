@@ -1,0 +1,87 @@
+$white: #ffffff;
+$black: #555555;
+$lightgray: #f0f0f0;
+$gray: #d0d0d0;
+$darkgray: #a0a0a0;
+$light: rgba(255, 255, 255, 0.3);
+$brightlight: rgba(255, 255, 255, 0.8);
+$shadow: rgba(0, 0, 0, 0.2);
+$darkshadow: rgba(0, 0, 0, 0.5);
+$darkershadow: rgba(0, 0, 0, 0.7);
+$transparent: transparent;
+$primary: #4f5ebb;
+$success: #2ecc25;
+$error: #f44336;
+
+@mixin respond-to($media) {
+  @if $media == mobile {
+    @media only screen and (max-width: 420px) {
+      @content;
+    }
+  } @else if $media == mobile_landscape {
+    @media only screen and (max-width: 650px) {
+      @content;
+    }
+  } @else if $media == tablet {
+    @media only screen and (max-width: 768px) {
+      @content;
+    }
+  } @else if $media == tablet_landscape {
+    @media only screen and (max-width: 1024px) {
+      @content;
+    }
+  } @else if $media == small_laptop {
+    @media only screen and (max-width: 1260px) {
+      @content;
+    }
+  } @else if $media == common_laptop {
+    @media only screen and (max-width: 1366px) {
+      @content;
+    }
+  } @else if $media == mac_book_screen {
+    @media only screen and (max-width: 1442px) {
+      @content;
+    }
+  } @else if $media == small_desktop {
+    @media only screen and (max-width: 1660px) {
+      @content;
+    }
+  }
+}
+
+@mixin loader(
+  $size: 80px,
+  $thickness: 10px,
+  $color1: $white,
+  $color2: $darkgray
+) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+  border: $thickness solid $color2;
+  border-top-color: $color1;
+  -webkit-animation: spin 1s infinite;
+  animation: spin 1s infinite;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: translate(-50%, -50%) rotate(0deg);
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    -webkit-transform: translate(-50%, -50%) rotate(360deg);
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: translate(-50%, -50%) rotate(0deg);
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    -webkit-transform: translate(-50%, -50%) rotate(360deg);
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
